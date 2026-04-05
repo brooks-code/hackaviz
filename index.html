@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happiness Wheel</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="panel">
+            <div class="year-controls">
+                <button id="prevYear">← Année Préc.</button>
+                <button id="nextYear"> Année suiv. →</button>
+                <button id="playPause">Démarrer</button>
+            </div>
+
+            <div class="hero" id="heroBox">
+                <div class="hero-top-row">
+                    <div class="kicker">
+                        <div class="kicker-left">
+                            <span class="kicker-dot"></span>
+                            <span id="stageLabel">La roue du bonheur.</span>
+                        </div>
+                        <div class="state-nav-group">
+                            <button id="prevStage" class="state-btn" aria-label="Previous story state">←</button>
+                            <button id="nextStage" class="state-btn" aria-label="Next story state">→</button>
+                        </div>
+                    </div>
+                    <h1 id="heroTitle">A story of human wellbeing</h1>
+                </div>
+
+                <p class="subcopy" id="heroCopy"></p>
+
+                <div class="cluster-toggle-row" id="clusterToggleRow">
+                    <span class="toggle-label">Identifier les groupes</span>
+                    <label class="switch" aria-label="Toggle cluster mode">
+                        <input type="checkbox" id="clusterToggle" />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="cluster-legend" id="clusterLegend"></div>
+
+                <div class="perception-row" id="perceptionToggleRow">
+                    <span class="toggle-label">Afficher le bonheur perçu</span>
+                    <label class="switch" aria-label="Toggle perception mode">
+                        <input type="checkbox" id="perceptionToggle" />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="perception-legend" id="perceptionLegend"></div>
+                <div class="story-meta" id="heroPills"></div>
+            </div>
+
+            <div class="hud" id="hud">
+                <div class="hud-head">
+                    <div class="hud-title">Légende</div>
+                    <button class="legend-toggle" id="legendToggle">+</button>
+                </div>
+                <div class="legend-wrap" id="legendWrap">
+                    <div id="legend" class="legend"></div>
+                </div>
+            </div>
+
+            <div class="tooltip" id="tooltip"></div>
+            <div class="fade-mask"></div>
+            <div class="big-word" id="bigWord">EUROPE</div>
+            <div class="selected-center" id="selectedCenter">
+                <div class="year" id="centerYear"></div>
+                <div class="name" id="centerName"></div>
+                <div class="score" id="centerScore"></div>
+            </div>
+        </div>
+
+        <svg id="chart" viewBox="0 0 1400 1400"></svg>
+    </div>
+
+    <script src="wheel.js"></script>
+</body>
+
+</html>

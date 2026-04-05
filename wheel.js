@@ -26,15 +26,19 @@ const stages = [
     {
         label: "Introduction",
         title: "Le bonheur, une statistique ?",
-        copy: "Euphrosyne erre, perplexe : que signifie vraiment « être heureux » ? À l’échelle de quelques pays de l’Union européenne, la réponse n’est pas simple : malgré le marché commun qui nous unit, des différences sociales et structurelles persistent. Pour y voir plus clair, elle a consolidé plusieurs indicateurs afin de construire un score agrégé (une note méthodologique est disponible). Un bloc de pays clairement favorisés se dessine: la Finlande et les Pays‑Bas dominent le classement, avec une stabilité remarquable entre 2004 et 2024. Mais le paysage est plus nuancé qu’il n’y paraît, curieuse, Euphrosyne décide d’approfondir : tendances temporelles, écarts régionaux, et indices subjectifs versus indicateurs socio‑économiques révèlent des histoires contrastées. Prêts pour la suite de l’exploration ?",
+        copy: `Euphrosyne erre, perplexe : que signifie vraiment « être heureux » ? À l’échelle de quelques pays de l’Union européenne, la réponse n’est pas simple : malgré le marché commun qui nous unit, des différences sociales et structurelles persistent. Pour y voir plus clair, elle a consolidé plusieurs indicateurs afin de construire un score agrégé (une  <a href="https://github.com/brooks-code/hackaviz/blob/main/methodology.md" target="_blank" rel="noopener noreferrer">note méthodologique</a> est disponible). Un bloc de pays clairement favorisés se dessine: la Finlande et les Pays‑Bas dominent le classement, avec une stabilité remarquable entre 2004 et 2024. Mais le paysage est plus nuancé qu’il n’y paraît, curieuse, Euphrosyne décide d’approfondir : tendances temporelles, écarts régionaux, et indices subjectifs versus indicateurs socio‑économiques révèlent des histoires contrastées. Prêts pour la suite de l’exploration ?`,
         pills: ["bonheur", "data storytelling", "hackaviz 2026"],
         word: "INTRO"
     },
     {
         label: "Story n◦1",
         title: "Le paradoxe balte",
-        copy: "Le « paradoxe balte » désigne un faible score agrégé (souvent parmi les trois derniers) mais un excellent classement selon l’indice de bonheur subjectif (halo mocaccino). Se sentir heureux ne signifie donc pas nécessairement être bien classé selon les indicateurs socio‑économiques. Comment l’expliquer ? Les Baltes sont‑ils particulièrement optimistes, ou bien les méthodes de calcul des indices de bonheur les désavantagent‑elles ?",
-        pills: ["états baltes", "décalage", "bonheur perçu"],
+        copy: `Le « paradoxe balte » désigne un faible score agrégé (souvent parmi les trois derniers) mais un excellent classement selon l’indice de bonheur subjectif (halo couleur mocaccino). Se sentir heureux ne signifie donc pas nécessairement être bien classé selon les indicateurs socio‑économiques. Comment l’expliquer ? Les Baltes sont‑ils particulièrement optimistes, ou bien les méthodes de calcul des indices de bonheur les désavantagent‑elles ?<br><br>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background: var(--perceptionGood)"></span>
+          <span>Bonheur subjectif supérieur : expansion couleur café</span>
+        </div>`,
+        pills: ["états baltes", "décalage", "bien-être perçu"],
         word: "PARADOXE",
         focusYear: 2006,
         focusCountries: ["Lituanie", "Estonie", "Lettonie"],
@@ -43,7 +47,10 @@ const stages = [
     {
         label: "Story n◦2",
         title: "Le Covid a rendu des fissures visibles",
-        copy: "Des événements peuvent-ils influer massivement sur le bonheur ? Penchons‑nous sur la crise du Covid, dont les effets sont particulièrement perceptibles en 2021. Certaines économies ont mieux résisté ; d'autres ont eu plus de mal à encaisser le choc (Allemagne : 0,553 → 0,436 ; Finlande : 0,630 → 0,550).",
+        copy: `Des événements peuvent-ils influer massivement sur le bien-être ? Penchons‑nous sur la crise du Covid, dont les effets sont particulièrement perceptibles en 2021. Certaines économies ont mieux résisté ; d'autres ont eu plus de mal à encaisser le choc.<br>Deux exemples :<ul>
+        <li>Allemagne : 0,553 → 0,436</li>
+        <li>Finlande : 0,630 → 0,550</li>
+      </ul>`,
         pills: ["pandémie", "perturbations", "crise sanitaire"],
         word: "COVID",
         focusYear: 2021,
@@ -170,7 +177,7 @@ function updateHero() {
     const s = stages[stageIndex];
     stageLabel.text(s.label);
     heroTitle.text(s.title);
-    heroCopy.text(s.copy);
+    heroCopy.html(s.copy);
     heroPills.selectAll("*").remove();
     s.pills.forEach(t => heroPills.append("div").attr("class", "pill").text(t));
     bigWord.text(s.word);
@@ -744,7 +751,7 @@ d3.csv("final_wellbeing_dataset.csv", d => {
     d3.select("#nextStage").on("click", () => gotoStage(stageIndex + 1));
 
     gotoStage(0);
-    setTimeout(() => gotoStage(1), 3600);
-    setTimeout(() => gotoStage(2), 7600);
-    setTimeout(() => gotoStage(3), 11600);
+    setTimeout(() => gotoStage(1), 10600);
+    setTimeout(() => gotoStage(2), 18600);
+    setTimeout(() => gotoStage(3), 24600);
 });

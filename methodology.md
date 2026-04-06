@@ -1,20 +1,20 @@
 # Méthodologie
 
-Mesurer le bien-être d'un pays à l'autre est une tâche complexe qui implique de multiples facteurs socio-économiques tels que la santé, les revenus ou l'éducation, etc... Les indices traditionnels s'appuient souvent sur des systèmes de pondération définis par des experts. Une autre approche consiste à recourir à l'apprentissage automatique pour mettre en évidence les structures latentes présentes dans les données.
+*Mesurer le bien-être d'un pays à l'autre est une tâche complexe qui implique de multiples facteurs socio-économiques tels que la santé, les revenus ou l'éducation, etc... Les indices traditionnels s'appuient souvent sur des systèmes de pondération définis par des experts. Une autre approche consiste à recourir à l'apprentissage automatique pour mettre en évidence les structures latentes présentes dans les données.*
 
 Ont été implémentés :
 
 - Un pipeline d'apprentissage automatique pour l'extraction de patterns et le regroupement par clusters.
-- Le calcul d'un indice composite normalisé basé sur l'agrégation et le classement par domaines (score global).
+- Le calcul d'un indice composite normalisé basé sur l'agrégation et le classement par domaines (score global) ainsi qu'un indice subjectif (bonheur perçu).
 
 ---
 
 > [!NOTE]
-> Face à des données variées et complexes. J'ai opté pour une **simplification raisonnée** des données en effectuant divers traitements pour rendre leur lecture possible et proposer une **visualisation lisible et interprétable**, qui permette d’identifier rapidement les tendances clés et les différences entre pays.
+> Face à des données variées et complexes. J'ai opté pour une **simplification raisonnée** des données en effectuant divers traitements pour rendre leur lecture possible et proposer une **visualisation lisible et interprétable** qui permet d’identifier rapidement les tendances clés et les différences entre pays.
 
 ## 1. Intégration des données
 
-Plusieurs datasets ont été combinées :
+Plusieurs datasets ont été combinés :
 
 - Indicateurs de bien-être
 - Produit Intérieur Brut (PIB)
@@ -134,4 +134,4 @@ Classement annuel des pays :
 
 Ce sont ces indices et rangs qui seront récupérés par le back-end de l'application.
 
-**Note :** L'appli web (front) est codée en JS (D3.js) et HTML/CSS. Source d'inspiration: [Ben Scott](https://www.nature.com/nature-index/news/data-visualization-these-are-the-happiest-countries-world-happiness-report-twenty-nineteen).
+**Note :** L'appli web est codée en JS (D3.js) et HTML/CSS. Source d'inspiration: [Ben Scott](https://www.nature.com/nature-index/news/data-visualization-these-are-the-happiest-countries-world-happiness-report-twenty-nineteen).

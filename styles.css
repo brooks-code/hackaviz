@@ -18,7 +18,7 @@
   --cluster3: #54d18c;
   --cluster4: #b388ff;
   --cluster5: #ffd166;
-  --perceptionGood: #B5884E;
+  --perceptionGood: #7e1919;
   --perceptionBad: #361E0E;
 }
 
@@ -508,8 +508,8 @@ button:active { transform: translateY(1px); }
 }
 
 .perception-ext.good {
-  fill: rgba(181, 136,  78, 0.30);
-  stroke: rgba(181, 136,  78, 0.85);
+  fill: rgba(228, 93, 70, 0.3);
+  stroke: rgba(150, 28, 6, 0.85);
   filter: url(#perceptionGlow);
 }
 
